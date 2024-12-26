@@ -54,7 +54,7 @@ export default function CoverflowSlider() {
                 }}
                 pagination={true}
                 modules={[EffectCoverflow, Pagination]}
-                className='coverflowSlider w-9/12'
+                className='w-9/12'
             >
                 {slideItems.map((slide, index) => (
                     <SwiperSlide key={index}>
@@ -64,7 +64,9 @@ export default function CoverflowSlider() {
                         <div>
                             <strong className='flex justify-center mb-3'>{slide.title}</strong>
                             <p className='mb-5'>{slide.description}</p>
-                            <a href='#'>{slide.linktext}</a>
+                            <a href='#'>
+                                <span className='underline'>{slide.linktext}</span>
+                            </a>
                         </div>
                     </SwiperSlide>
                 ))}
