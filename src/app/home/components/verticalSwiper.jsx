@@ -26,12 +26,6 @@ export default function VerticalSwiper() {
                 className='verticalSwiper'
             >
                 <SwiperSlide className='h-screen overflow-hidden'>
-                    <Hero />
-                </SwiperSlide>
-                <SwiperSlide className='h-screen overflow-hidden bg-black'>
-                    <GridGallery />
-                </SwiperSlide>
-                <SwiperSlide className='h-screen overflow-hidden'>
                     <IntroSwiper />
                 </SwiperSlide>
                 <SwiperSlide className='h-screen overflow-hidden bg-black'>Slide 4</SwiperSlide>

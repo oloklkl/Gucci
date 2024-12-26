@@ -37,15 +37,15 @@ const productItems = [
 
 export default function GridGallery() {
     return (
-        <div className='text-white'>
-            <h1 className='text-7xl my-14 font-bold text-center'>홀리데이를 맞아 선보이는 특별한 제품</h1>
+        <div className='text-white bg-black h-full'>
+            <h1 className='text-7xl font-bold py-10'>홀리데이를 맞아 선보이는 특별한 제품</h1>
             <div>
                 <h2 className='text-2xl'>Crafting timeless</h2>
                 <h2 className='text-2xl'>luxury elevating brands</h2>
             </div>
-            <SimpleGrid as='ul' columns={{ base: 1, md: 2, lg: 3, xl: 3 }} gap='10px'>
+            <SimpleGrid as='ul' columns={{ base: 3 }} gap='20px' className='justify-items-end'>
                 {productItems.map((product, index) => (
-                    <div key={index} className='inline-flex justify-end width=[400px] height=[400px]'>
+                    <div key={index}>
                         <div>
                             <div>
                                 <Image
