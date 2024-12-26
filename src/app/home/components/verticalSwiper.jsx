@@ -8,6 +8,7 @@ import { Mousewheel, Pagination } from 'swiper/modules';
 import Hero from './hero';
 import IntroSwiper from './introSwiper';
 import CoverflowSlider from './coverflowSlider';
+import GridGallery from './gridGallery';
 
 export default function VerticalSwiper() {
     return (
@@ -27,7 +28,9 @@ export default function VerticalSwiper() {
                 <SwiperSlide className='h-screen overflow-hidden'>
                     <Hero />
                 </SwiperSlide>
-                <SwiperSlide className='h-screen overflow-hidden bg-black'>Slide</SwiperSlide>
+                <SwiperSlide className='h-screen overflow-hidden bg-black'>
+                    <GridGallery />
+                </SwiperSlide>
                 <SwiperSlide className='h-screen overflow-hidden'>
                     <IntroSwiper />
                 </SwiperSlide>
