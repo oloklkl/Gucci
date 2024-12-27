@@ -5,10 +5,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import { Mousewheel, Pagination } from 'swiper/modules';
-import Hero from './hero';
 import IntroSwiper from './introSwiper';
 import CoverflowSlider from './coverflowSlider';
-import GridGallery from './gridGallery';
 
 export default function VerticalSwiper() {
     return (

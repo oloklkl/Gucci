@@ -1,6 +1,15 @@
-import { SimpleGrid } from '@chakra-ui/react';
+import { Box, Flex, SimpleGrid, Spacer, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
+import dynamic from 'next/dynamic';
+
+// Swiper를 클라이언트 사이드에서만 렌더링하도록 설정
+const Swiper = dynamic(() => import('swiper/react').then((mod) => mod.Swiper), {
+    ssr: false,
+});
+const SwiperSlide = dynamic(() => import('swiper/react').then((mod) => mod.SwiperSlide), {
+    ssr: false,
+});
 
 const productItems = [
     {
@@ -37,30 +46,31 @@ const productItems = [
 
 export default function GridGallery() {
     return (
-        <div className='text-white bg-black h-full'>
+        <div className='text-white bg-black h-full min-h-screen pb-20'>
             <h1 className='text-7xl font-bold py-10'>홀리데이를 맞아 선보이는 특별한 제품</h1>
-            <div>
-                <h2 className='text-2xl'>Crafting timeless</h2>
-                <h2 className='text-2xl'>luxury elevating brands</h2>
-            </div>
-            <SimpleGrid as='ul' columns={{ base: 3 }} gap='20px' className='justify-items-end'>
-                {productItems.map((product, index) => (
-                    <div key={index}>
-                        <div>
-                            <div>
-                                <Image
-                                    className='m-2 rounded-lg'
-                                    src={product.image}
-                                    width={400}
-                                    height={400}
-                                    alt='main'
-                                />
-                            </div>
-                            <p>{product.title}</p>
-                        </div>
-                    </div>
-                ))}
-            </SimpleGrid>
+            <Flex minWidth='max-content' alignItems='start' gap='2'>
+                <div className='translate-y-10 translate-x-10'>
+                    <h2 className='text-2xl'>Crafting timeless</h2>
+                    <h2 className='text-2xl'>luxury elevating brands</h2>
+                </div>
+                <Spacer />
+                <SimpleGrid as='ul' columns={{ base: 3 }} gap='5px'>
+                    {productItems.map((product) => (
+                        <Box as='li' key={product.id}>
+                            <Image
+                                className='m-2 my-8 rounded-lg'
+                                src={product.image}
+                                width={430}
+                                height={430}
+                                alt={product.title}
+                            />
+                            <Text my={-4} ml={3} fontWeight='bold'>
+                                {product.title}
+                            </Text>
+                        </Box>
+                    ))}
+                </SimpleGrid>
+            </Flex>
         </div>
     );
 }
