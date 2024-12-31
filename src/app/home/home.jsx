@@ -3,6 +3,7 @@ import Hero from './components/hero';
 import GridGallery from './components/gridGallery';
 import IntroSwiper from './components/introSwiper';
 import CoverflowSlider from './components/coverflowSlider';
+import RunwaySlider from './components/runwaySlider';
 
 const Home = () => {
     return (
@@ -10,6 +11,9 @@ const Home = () => {
             <Hero />
             <GridGallery />
             <IntroSwiper />
+            <div className='bg-black min-h-screen py-10'>
+                <RunwaySlider />
+            </div>
             <CoverflowSlider />
         </>
     );
