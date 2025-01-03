@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { background } from '@chakra-ui/react';
 
 const navigation = [
     { name: 'Product', href: '#' },
@@ -14,10 +15,10 @@ export default function Hero() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <div className='relative h-screen'>
-            <div className='absolute inset-0 -z-10'>
+        <div className='h-screen bg-top' style={{ backgroundImage: `url('/images/pattern/main/main.jpg')` }}>
+            {/* <div className='absolute inset-0 -z-10'>
                 <Image src='/images/pattern/main/main.jpg' fill className='object-cover' alt='Background' priority />
-            </div>
+            </div> */}
             <div className='relative h-full px-6 lg:px-8 flex items-center'>
                 <div className='mx-auto max-w-2xl'>
                     <div className='hidden sm:mb-8 sm:flex sm:justify-center'>

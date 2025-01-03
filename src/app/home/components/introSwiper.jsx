@@ -17,21 +17,21 @@ import Image from 'next/image';
 const slideData = [
     {
         id: 1,
-        image: '/images/pattern/thumb/products/aria.jpg',
-        title: 'AI를 일상에 적용하는 법: 대학생편',
-        description: '대학생들이 AI를 이용해 학습하는 방법에 대해 알아보자.',
+        image: '/',
+        title: '디자이너의 메시지',
+        description: '자연과 도시의 만남을 표현한 이번 컬렉션은 현대인의 삶을 재해석한 작품입니다.',
     },
     {
         id: 2,
-        image: '/images/pattern/main/main.jpg',
-        title: 'AI를 일상에 적용하는 법: 대학생편',
-        description: '대학생들이 AI를 이용해 학습하는 방법에 대해 알아보자.',
+        image: '/',
+        title: '컬렉션의 영감',
+        description: '이번 시즌의 디자인은 전통적인 이탈리아 건축과 미학에서 영감을 받았습니다.',
     },
     {
         id: 3,
-        image: '/images/pattern/main/main.jpg',
-        title: 'AI를 일상에 적용하는 법: 대학생편',
-        description: '대학생들이 AI를 이용해 학습하는 방법에 대해 알아보자.',
+        image: '/',
+        title: '장인 정신',
+        description: '수작업으로 제작된 디테일은 구찌의 고유한 가치를 담고 있습니다.',
     },
 ];
 

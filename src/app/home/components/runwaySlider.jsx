@@ -12,7 +12,7 @@ export default function RunwaySlider() {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     return (
-        <>
+        <div className='bg-black min-h-screen py-10'>
             <Swiper
                 style={{
                     '--swiper-navigation-color': '#fff',
@@ -132,6 +132,6 @@ export default function RunwaySlider() {
                     <iframe src='https://swiperjs.com/demos/images/nature-1.jpg' allowFullScreen />
                 </SwiperSlide>
             </Swiper>
-        </>
+        </div>
     );
 }
