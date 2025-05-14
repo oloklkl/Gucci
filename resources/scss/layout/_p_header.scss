@@ -1,0 +1,143 @@
+/* 공통 스타일 */
+$transition-ease: 0.3s ease;
+
+a {
+  text-decoration: none;
+  display: block;
+  transition: color $transition-ease;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: transparent;
+  transition: background $transition-ease;
+
+  .inner {
+    height: 130px;
+    transition: height $transition-ease;
+
+    h1 img {
+      width: 150px;
+      filter: invert(100%) sepia(94%) saturate(25%) hue-rotate(12deg) brightness(105%) contrast(108%);
+    }
+
+    .header-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .logo-nav.active {
+      display: flex;
+      align-items: center;
+      gap: 100px;
+    }
+
+    .top-menu {
+      display: flex;
+      align-items: center;
+
+      li {
+        margin-left: 15px;
+
+        a {
+          font-size: 1.4rem;
+          color: $white;
+
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+
+      .search-icon,
+      .cart-icon,
+      .user-icon {
+        i {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+
+  &.transparent {
+    background: white;
+
+    .gnb a,
+    .top-menu a {
+      color: black !important;
+    }
+
+    .top-menu i {
+      color: black !important;
+    }
+
+    .inner {
+      height: 60px;
+    }
+  }
+}
+
+.gnb {
+  display: flex;
+
+  @include mobile {
+    display: none;
+  }
+
+  > li {
+    position: relative;
+
+    a {
+      width: 140px;
+      line-height: 40px;
+      font-size: 1.6rem;
+      font-weight: 500;
+      text-align: start;
+      z-index: 10;
+      color: $white;
+
+      &:hover {
+        color: $primary;
+        font-weight: $font-bold;
+      }
+    }
+
+    ul {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      transform: translateY(-20px);
+      transition: all $transition-ease;
+      border-radius: 15px;
+
+      &.on {
+        opacity: 1;
+        max-height: 600px;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      li {
+        a {
+          padding: 5px 10px;
+          width: 200px;
+          font-size: 1.6rem;
+          font-weight: normal;
+          background: $white;
+          color: $gray-70;
+
+          &:hover {
+            background-color: $gray-30;
+          }
+        }
+      }
+    }
+  }
+}

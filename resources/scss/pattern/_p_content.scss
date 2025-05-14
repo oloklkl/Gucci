@@ -1,0 +1,107 @@
+// 스와이퍼, 카드, 콘텐츠 배치용
+
+// swiper 전역 스타일
+.intro {
+  .swiper {
+    width: 100%;
+    height: 100vh;
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: $white;
+      @include flexCenter;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      display: none;
+    }
+  }
+}
+
+// studio 섹션
+.studio {
+  .studio-content {
+    flex: 1;
+
+    .swiper {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .swiper-wrapper {
+      display: flex;
+      gap: 24px;
+
+      .swiper-slide {
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+}
+
+//mix-match 섹션
+.mix-match {
+  .swiper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: $black;
+    width: 50px;
+    height: 50px;
+    background-color: $white;
+    border: 2px solid $primary;
+    border-radius: 50%;
+    padding: 10px;
+  }
+
+  .swiper-button-next {
+    right: 30%;
+  }
+  .swiper-button-prev {
+    left: 30%;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 2.4rem;
+  }
+}
