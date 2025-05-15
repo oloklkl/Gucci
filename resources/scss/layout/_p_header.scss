@@ -99,6 +99,11 @@ a {
       z-index: 10;
       color: $white;
 
+      @include tablet {
+        width: 100px;
+        font-size: 1.4rem;
+      }
+
       &:hover {
         color: $primary;
         font-weight: $font-bold;

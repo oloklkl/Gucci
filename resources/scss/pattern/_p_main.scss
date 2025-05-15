@@ -33,7 +33,17 @@
 
       img {
         object-position: 50% 50%;
+        height: 100vh;
+
+        @include tablet {
+          height: 100vh;
+        }
+
+        @include tabletMore {
+          height: 100vh;
+        }
       }
+
       .text-area {
         position: absolute;
         top: 50%;
@@ -45,64 +55,65 @@
         opacity: 0;
         transition: all 0.5s;
 
-        &__tit {
-          font-size: 3rem;
-          color: $white;
-          font-family: $font-family-title;
-          font-weight: $font-medium;
-        }
-        &__cont {
-          color: $white;
-        }
-        &__goto {
-          display: inline-block;
-          margin-top: 20px;
-          padding: 7px 20px;
-          background: $primary-60;
-          color: $white;
-        }
-      }
-      img {
-        height: 100vh;
-      }
-    }
-    .swiper-pagination {
-      display: none;
-    }
-  }
-
-  @include tablet {
-    .slide-intro .swiper-slide img {
-      height: 100vh;
-    }
-  }
-
-  @include tabletMore {
-    .slide-intro {
-      .swiper-slide {
-        img {
-          height: 100vh;
-        }
-        .text-area {
+        @include tabletMore {
           width: 50%;
           max-width: none;
           text-align: center;
         }
-        .text-area__tit {
+
+        &__tit {
           font-size: 5rem;
+          color: $white;
+          font-family: $font-family-title;
+          font-weight: $font-medium;
+
+          @include tablet {
+            font-size: 3rem;
+          }
+          @include mobile {
+            font-size: 2.5rem;
+          }
         }
-        .text-area__cont {
+
+        &__cont {
+          color: $white;
           font-size: 2rem;
+
+          @include mobile {
+            font-size: 1.5rem;
+          }
         }
-        .text-area__goto {
+
+        &__goto {
+          display: inline-block;
           margin-top: 30px;
+          padding: 7px 20px;
+          background: $primary-60;
+          color: $white;
+
+          @include tablet {
+            margin-top: 20px;
+            font-size: 1.6rem;
+          }
+          @include mobile {
+            padding: 5px 18px;
+            font-size: 1.4rem;
+          }
         }
       }
-      .swiper-pagination {
+    }
+
+    .swiper-pagination {
+      display: none;
+
+      @include tabletMore {
         display: block;
       }
-      .swiper-button-next,
-      .swiper-button-prev {
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      @include tabletMore {
         display: none;
       }
     }
@@ -131,6 +142,13 @@
       cursor: pointer;
       transition: 0.3s;
 
+      @include tablet {
+        font-size: 4rem;
+      }
+      @include mobile {
+        font-size: 2.5rem;
+      }
+
       &:hover {
         color: $primary;
       }
@@ -151,12 +169,28 @@
           height: 400px;
           object-fit: cover;
           // border-radius: 8px;
+
+          @include tablet {
+            width: 250px;
+            height: 350px;
+          }
+          @include mobile {
+            width: 150px;
+            height: 250px;
+          }
         }
 
         .studio-item-name {
           font-size: 1.6rem;
           margin-top: 16px;
           font-weight: 600;
+
+          @include tablet {
+            font-size: 1.4rem;
+          }
+          @include mobile {
+            font-size: 1.3rem;
+          }
         }
 
         .studio-item-price {
@@ -164,6 +198,13 @@
           font-size: 1.5rem;
           margin-top: 8px;
           color: #555;
+
+          @include tablet {
+            font-size: 1.4rem;
+          }
+          @include mobile {
+            font-size: 1.3rem;
+          }
         }
 
         .studio-item-season {
@@ -171,6 +212,13 @@
           font-size: 1.3rem;
           margin-top: 4px;
           color: #999;
+
+          @include tablet {
+            font-size: 1.2rem;
+          }
+          @include mobile {
+            font-size: 1.2rem;
+          }
         }
       }
     }
@@ -194,18 +242,48 @@
     h2 {
       font-family: $font-family-title;
       font-size: 8rem;
+
+      @include tablet {
+        font-size: 5rem;
+      }
+      @include mobile {
+        font-size: 7rem;
+        margin-bottom: 50px;
+      }
     }
     p {
       font-size: 2.2rem;
       margin-bottom: 30px;
+
+      @include tablet {
+        font-size: 2rem;
+      }
+      @include mobile {
+        font-size: 2rem;
+      }
     }
     button {
       background-color: $gray-0;
       padding: 10px 30px;
       font-weight: bold;
       border-radius: 2px;
+
+      @include mobile {
+        padding: 18px 35px;
+      }
     }
   }
+
+  iframe {
+    @include tablet {
+      width: 550px;
+      height: 400px;
+    }
+    @include mobile {
+      display: none;
+    }
+  }
+
   img {
     width: 800px;
   }
@@ -303,13 +381,26 @@
 .banner-strip {
   border-top: 3px solid $primary-50;
   border-bottom: 3px solid $primary-50;
+  overflow: hidden;
 
   h2 {
     font-family: $font-family-title;
     font-size: 5rem;
     font-weight: 500;
     color: $primary;
-    padding: 0 30px;
+    padding: 0 20px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+
+    @include tablet {
+      font-size: 4rem;
+    }
+
+    @include mobile {
+      font-size: 3.2rem;
+    }
   }
 }
 
@@ -324,13 +415,26 @@
     align-items: center;
     margin-bottom: 30px;
 
-    a {
-      width: 250px;
-      border: 1px solid $primary-50;
-      padding: 10px 50px;
-      font-size: 2rem;
-      font-weight: 600;
-      text-align: center;
+    button {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        width: 250px;
+        border: 1px solid $primary-50;
+        padding: 10px 50px;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
+      @include tablet {
+        font-size: 1.6rem;
+      }
+      @include mobile {
+        font-size: 1.4rem;
+      }
 
       .ri-circle-fill {
         color: $primary-50;
@@ -367,10 +471,20 @@
 
     h2 {
       font-size: 3rem;
+
+      @include mobile {
+        font-size: 2rem;
+      }
     }
 
     a {
       color: $gray-0;
+
+      .gucci-recommend__more {
+        @include mobile {
+          font-size: 1.5rem;
+        }
+      }
     }
   }
 
@@ -383,13 +497,21 @@
   .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 250px;
+    width: 100%;
     height: 650px;
+
+    @include mobile {
+      height: 450px;
+    }
 
     img {
       display: block;
       width: 100%;
       height: 650px;
+
+      @include mobile {
+        height: 450px;
+      }
     }
   }
 }

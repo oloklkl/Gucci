@@ -46,6 +46,13 @@
       display: flex;
       gap: 24px;
 
+      @include tablet {
+        gap: 10px;
+      }
+      @include mobile {
+        gap: 0;
+      }
+
       .swiper-slide {
         width: auto;
         height: auto;
@@ -82,7 +89,7 @@
   .swiper-button-prev {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-30%);
     z-index: 10;
     color: $black;
     width: 50px;
@@ -91,13 +98,30 @@
     border: 2px solid $primary;
     border-radius: 50%;
     padding: 10px;
+
+    @include tablet {
+      width: 40px;
+      height: 40px;
+    }
+    @include mobile {
+      width: 30px;
+      height: 30px;
+    }
   }
 
   .swiper-button-next {
     right: 30%;
+
+    @include mobile {
+      right: 25%;
+    }
   }
   .swiper-button-prev {
     left: 30%;
+
+    @include mobile {
+      left: 25%;
+    }
   }
 
   .swiper-button-next::after,
