@@ -12,23 +12,23 @@ const preventDefaultAnchor = () => {
 // GNB 메뉴 기능
 const navBar = () => {
   const $gnblis = getAll("#header .nav .gnb > li");
-  const $gnbuls = getAll("#header .nav .gnb > li ul");
 
   $gnblis.forEach((li, idx) => {
+    const submenu = li.querySelector("ul");
+
     li.addEventListener("mouseenter", () => {
-      console.log(`Mouse enter on li ${idx}`);
-      $gnbuls.forEach((ulItem) => {
-        ulItem.classList.remove("on");
+      // 모든 서브메뉴 닫기
+      $gnblis.forEach((otherLi) => {
+        const otherSub = otherLi.querySelector("ul");
+        if (otherSub) otherSub.classList.remove("on");
       });
-      $gnbuls[idx].classList.add("on");
-    });
-  });
 
-  // `mouseleave` 시 메뉴 숨기기
-  $gnblis.forEach((li, idx) => {
+      // 해당 li의 서브메뉴 열기
+      if (submenu) submenu.classList.add("on");
+    });
+
     li.addEventListener("mouseleave", () => {
-      console.log(`Mouse leave on li ${idx}`);
-      $gnbuls[idx].classList.remove("on");
+      if (submenu) submenu.classList.remove("on");
     });
   });
 };
