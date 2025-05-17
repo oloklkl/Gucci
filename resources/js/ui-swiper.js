@@ -12,6 +12,7 @@ var swiper = new Swiper(".slide-intro", {
 var swiper = new Swiper(".studio-slide", {
   slidesPerView: "auto",
   spaceBetween: 15,
+  loop: true,
   pagination: {
     el: ".studio-slide .swiper-pagination",
     clickable: true,
