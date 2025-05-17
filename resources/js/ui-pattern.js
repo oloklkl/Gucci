@@ -9,21 +9,19 @@ const preventDefaultAnchor = () => {
   });
 };
 
-// GNB 메뉴 기능
+// GNB 메뉴 기능 (상단 네비서브)
 const navBar = () => {
   const $gnblis = getAll("#header .nav .gnb > li");
 
-  $gnblis.forEach((li, idx) => {
+  $gnblis.forEach((li) => {
     const submenu = li.querySelector("ul");
 
     li.addEventListener("mouseenter", () => {
-      // 모든 서브메뉴 닫기
       $gnblis.forEach((otherLi) => {
         const otherSub = otherLi.querySelector("ul");
         if (otherSub) otherSub.classList.remove("on");
       });
 
-      // 해당 li의 서브메뉴 열기
       if (submenu) submenu.classList.add("on");
     });
 
@@ -33,7 +31,7 @@ const navBar = () => {
   });
 };
 
-// Skip Navigation (Tab 키로 이동 문제 해결)
+// Skip Navigation (탭 접근성 개선)
 const skipNav = () => {
   const $skipLinks = getAll("#skip-nav a");
 
@@ -51,31 +49,101 @@ const skipNav = () => {
   });
 };
 
-// 전체 실행
+// 헤더 & 로고 스타일 변경 함수
+function setHeaderStyle(isActive) {
+  const header = get("#header");
+  const logoNav = get(".logo-nav");
+  const logoImg = get("h1 img");
+
+  if (isActive) {
+    // 메뉴 열림 또는 스크롤 내렸을 때 (배경 흰색, 검은 글씨/아이콘)
+    header.classList.add("transparent");
+    logoNav.classList.add("active");
+    logoImg.style.filter = "none";
+  } else {
+    // 메뉴 닫힘 상태 - 스크롤 위치에 따라 스타일 복구
+    const introSection = get(".intro");
+    if (introSection.getBoundingClientRect().bottom <= 0) {
+      header.classList.add("transparent");
+      logoNav.classList.add("active");
+      logoImg.style.filter = "none";
+    } else {
+      header.classList.remove("transparent");
+      logoNav.classList.remove("active");
+      logoImg.style.filter = "invert(100%) sepia(94%) saturate(25%) hue-rotate(12deg) brightness(105%) contrast(108%)";
+    }
+  }
+}
+
+// 스크롤 이벤트에 따라 헤더 스타일 변경
+window.addEventListener("scroll", () => {
+  // 만약 카테고리 메뉴가 열려있으면 스크롤 이벤트 시 헤더 스타일 변경 안 함 (우선순위)
+  const bottomCategory = get(".bottom-category");
+  if (bottomCategory && bottomCategory.classList.contains("show")) {
+    return;
+  }
+  setHeaderStyle(false);
+});
+
+// CATEGORY 버튼 & 하위 메뉴 토글
+const bottomMenuToggle = () => {
+  const menuItems = getAll(".bottom-category .gnb > li");
+  const bottomCategory = get(".bottom-category");
+  const categoryBtn = get(".bottom-bar ul li:first-child"); // CATEGORY 버튼
+
+  // CATEGORY 버튼 클릭 시 메뉴 show 토글 & 헤더 스타일 변경
+  categoryBtn.addEventListener("click", () => {
+    bottomCategory.classList.toggle("show");
+
+    // 메뉴 열림 여부에 따라 헤더 스타일 변경
+    const isOpen = bottomCategory.classList.contains("show");
+    setHeaderStyle(isOpen);
+
+    if (isOpen) {
+      categoryBtn.classList.add("active");
+    } else {
+      categoryBtn.classList.remove("active");
+    }
+  });
+
+  // 하위 메뉴 아이템 클릭 시 토글 (서브메뉴 열기/닫기)
+  menuItems.forEach((item) => {
+    const link = item.querySelector("a");
+
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      console.log("Clicked:", item);
+
+      menuItems.forEach((el) => {
+        if (el !== item) el.classList.remove("active");
+      });
+
+      item.classList.toggle("active");
+    });
+  });
+};
+
+// DOM 준비 후 초기화
 document.addEventListener("DOMContentLoaded", () => {
   preventDefaultAnchor();
   navBar();
   skipNav();
-});
+  bottomMenuToggle();
 
-// Scroll 이벤트에 따라 헤더 투명도 조절
-window.addEventListener("scroll", function () {
-  const header = document.querySelector("#header");
-  const introSection = document.querySelector(".intro");
-  const logoNav = document.querySelector(".logo-nav");
-  const logoImg = document.querySelector("h1 img"); // 로고 이미지 선택
+  // 화면 크기 변경 시 카테고리 메뉴 닫기 처리
+  window.addEventListener("resize", () => {
+    const bottomCategory = document.querySelector(".bottom-category");
+    const categoryBtn = document.querySelector(".bottom-bar ul li:first-child");
+    if (bottomCategory && bottomCategory.classList.contains("show")) {
+      bottomCategory.classList.remove("show");
+      categoryBtn.classList.remove("active");
 
-  if (introSection.getBoundingClientRect().bottom <= 0) {
-    header.classList.add("transparent");
-    logoNav.classList.add("active");
+      // 닫혔으니 헤더 스타일 복구
+      setHeaderStyle(false);
 
-    // 헤더가 흰색일 때 검은색 로고 적용
-    logoImg.style.filter = "none"; // 필터 제거 (검은색 로고)
-  } else {
-    header.classList.remove("transparent");
-    logoNav.classList.remove("active");
-
-    // 헤더가 투명일 때 흰색 로고 적용
-    logoImg.style.filter = "invert(100%) sepia(94%) saturate(25%) hue-rotate(12deg) brightness(105%) contrast(108%)";
-  }
+      // 서브메뉴 열려있으면 다 닫기
+      const menuItems = document.querySelectorAll(".bottom-category .gnb > li.active");
+      menuItems.forEach((item) => item.classList.remove("active"));
+    }
+  });
 });
