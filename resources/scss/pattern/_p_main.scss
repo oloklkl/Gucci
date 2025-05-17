@@ -136,16 +136,18 @@
     padding-right: 20px;
 
     .studio-title {
-      font-size: 5rem;
-      margin-bottom: 24px;
+      font-size: 4.6rem;
+      margin-bottom: 40px;
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
 
       @include tablet {
+        margin-bottom: 30px;
         font-size: 4rem;
       }
       @include mobile {
+        margin-bottom: 20px;
         font-size: 2.5rem;
       }
 
@@ -163,20 +165,40 @@
         text-decoration: none;
         color: #333;
 
-        img {
-          display: block;
-          width: 300px;
-          height: 400px;
-          object-fit: cover;
-          // border-radius: 8px;
+        .img-wrap {
+          position: relative;
 
-          @include tablet {
-            width: 250px;
-            height: 350px;
+          .img-default,
+          .img-hover {
+            display: block;
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+
+            @include tablet {
+              width: 250px;
+              height: 350px;
+            }
+            @include mobile {
+              width: 150px;
+              height: 250px;
+            }
           }
-          @include mobile {
-            width: 150px;
-            height: 250px;
+
+          .img-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+          }
+
+          &:hover .img-hover {
+            opacity: 1;
+          }
+
+          &:hover .img-default {
+            opacity: 0;
           }
         }
 

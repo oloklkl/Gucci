@@ -459,19 +459,21 @@ legend {
   padding-right: 20px;
 }
 .studio .studio-text .studio-title {
-  font-size: 5rem;
-  margin-bottom: 24px;
+  font-size: 4.6rem;
+  margin-bottom: 40px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
 }
 @media (min-width: 600px) and (max-width: 1023px) {
   .studio .studio-text .studio-title {
+    margin-bottom: 30px;
     font-size: 4rem;
   }
 }
 @media (max-width: 599px) {
   .studio .studio-text .studio-title {
+    margin-bottom: 20px;
     font-size: 2.5rem;
   }
 }
@@ -484,23 +486,42 @@ legend {
   text-decoration: none;
   color: #333;
 }
-.studio .studio-content .swiper-slide a img {
+.studio .studio-content .swiper-slide a .img-wrap {
+  position: relative;
+}
+.studio .studio-content .swiper-slide a .img-wrap .img-default,
+.studio .studio-content .swiper-slide a .img-wrap .img-hover {
   display: block;
   width: 300px;
   height: 400px;
   object-fit: cover;
+  transition: opacity 0.3s ease;
 }
 @media (min-width: 600px) and (max-width: 1023px) {
-  .studio .studio-content .swiper-slide a img {
+  .studio .studio-content .swiper-slide a .img-wrap .img-default,
+  .studio .studio-content .swiper-slide a .img-wrap .img-hover {
     width: 250px;
     height: 350px;
   }
 }
 @media (max-width: 599px) {
-  .studio .studio-content .swiper-slide a img {
+  .studio .studio-content .swiper-slide a .img-wrap .img-default,
+  .studio .studio-content .swiper-slide a .img-wrap .img-hover {
     width: 150px;
     height: 250px;
   }
+}
+.studio .studio-content .swiper-slide a .img-wrap .img-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.studio .studio-content .swiper-slide a .img-wrap:hover .img-hover {
+  opacity: 1;
+}
+.studio .studio-content .swiper-slide a .img-wrap:hover .img-default {
+  opacity: 0;
 }
 .studio .studio-content .swiper-slide a .studio-item-name {
   font-size: 1.6rem;
