@@ -34,16 +34,20 @@ Object.entries(slideData).forEach(([category, items], index) => {
 
 // 탭 클릭 이벤트
 const tabs = document.querySelectorAll(".studio-title");
+
+// 처음 탭에 active 클래스 미리 추가
+if (tabs.length > 0) {
+  tabs[0].classList.add("active");
+}
+
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
-    const selected = tab.dataset.tab;
+    tabs.forEach((t) => t.classList.remove("active"));
+    tab.classList.add("active");
 
-    // 슬라이드 표시
+    const selected = tab.dataset.tab;
     document.querySelectorAll(".studio-slide").forEach((slide) => {
       slide.style.display = slide.dataset.tabContent === selected ? "block" : "none";
     });
-
-    // 탭 active 클래스 토글
-    tabs.forEach((t) => t.classList.toggle("active", t.dataset.tab === selected));
   });
 });
