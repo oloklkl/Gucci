@@ -37,8 +37,13 @@ const tabs = document.querySelectorAll(".studio-title");
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
     const selected = tab.dataset.tab;
+
+    // 슬라이드 표시
     document.querySelectorAll(".studio-slide").forEach((slide) => {
       slide.style.display = slide.dataset.tabContent === selected ? "block" : "none";
     });
+
+    // 탭 active 클래스 토글
+    tabs.forEach((t) => t.classList.toggle("active", t.dataset.tab === selected));
   });
 });
