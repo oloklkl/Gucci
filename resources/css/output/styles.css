@@ -491,6 +491,9 @@ legend {
 .studio .studio-text .studio-title:hover {
   color: #0a6b31;
 }
+.studio .studio-text .studio-title.active {
+  color: #0a6b31;
+}
 .studio .studio-content .swiper-slide a {
   display: block;
   text-align: center;
