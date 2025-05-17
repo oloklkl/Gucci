@@ -138,6 +138,10 @@ a {
           background: $white;
           color: $gray-70;
 
+          @include tablet {
+            font-size: 1.4rem;
+          }
+
           &:hover {
             background-color: $gray-30;
           }
@@ -145,4 +149,11 @@ a {
       }
     }
   }
+}
+
+.gnb > li:hover > ul {
+  max-height: 600px;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }

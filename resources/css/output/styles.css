@@ -254,7 +254,7 @@ legend {
 }
 
 :root {
-  --swiper-theme-color: #0a6b31;
+  --swiper-theme-color: #b20808;
 }
 
 .bg-gray {
@@ -746,12 +746,14 @@ legend {
   font-weight: 600;
 }
 @media (min-width: 600px) and (max-width: 1023px) {
-  .mix-match .gender-tabs button {
+  .mix-match .gender-tabs button span {
     font-size: 1.6rem;
   }
 }
 @media (max-width: 599px) {
-  .mix-match .gender-tabs button {
+  .mix-match .gender-tabs button span {
+    width: 180px;
+    padding: 10px 40px;
     font-size: 1.4rem;
   }
 }
@@ -771,9 +773,21 @@ legend {
   padding: 10px 50px;
   color: #ffffff;
 }
+@media (min-width: 600px) and (max-width: 1023px) {
+  .mix-match .add-to-cart span {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 599px) {
+  .mix-match .add-to-cart span {
+    width: 180px;
+    padding: 10px 40px;
+    font-size: 1.4rem;
+  }
+}
 
 .gucci-recommend {
-  background-color: #c49a6c;
+  background-color: #282828;
   padding: 50px 0;
 }
 .gucci-recommend__header {
@@ -844,11 +858,88 @@ legend {
   font-size: 1.2rem;
   color: #c6c6c6;
 }
+.bottom-bar ul li:hover {
+  color: #0a6b31;
+  cursor: pointer;
+}
+.bottom-bar ul li.active {
+  color: #0a6b31;
+}
 .bottom-bar ul li i {
   font-size: 2.4rem;
 }
 .bottom-bar ul li:nth-child(2) {
   color: #1d1d1d;
+}
+
+.bottom-category {
+  position: fixed;
+  top: 60px;
+  bottom: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  display: none;
+}
+@media (min-width: 600px) {
+  .bottom-category {
+    display: none;
+  }
+}
+.bottom-category.show {
+  display: block;
+}
+.bottom-category .bottom-category-nav {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.bottom-category .bottom-category-nav .gnb {
+  display: flex;
+  flex-direction: column;
+  padding: 80px 0;
+}
+.bottom-category .bottom-category-nav .gnb > li {
+  flex: 1;
+  position: static;
+  text-align: center;
+}
+.bottom-category .bottom-category-nav .gnb > li > a {
+  display: block;
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: #1d1d1d;
+}
+.bottom-category .bottom-category-nav .gnb > li > a:hover {
+  color: #b20808;
+}
+.bottom-category .bottom-category-nav .gnb > li > ul {
+  position: static;
+  max-height: 0;
+  padding: 1rem 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+.bottom-category .bottom-category-nav .gnb > li > ul li a {
+  display: block;
+  padding: 0 3rem;
+  font-size: 1.3rem;
+  color: #444;
+  cursor: pointer;
+}
+.bottom-category .bottom-category-nav .gnb > li > ul li a:hover {
+  color: #c49a6c;
+  font-weight: bold;
+}
+.bottom-category .bottom-category-nav .gnb > li.active > ul {
+  max-height: 1000px;
+  opacity: 1;
 }
 
 .intro .swiper {
@@ -1094,8 +1185,20 @@ a {
   background: #fff;
   color: #555555;
 }
+@media (min-width: 600px) and (max-width: 1023px) {
+  .gnb > li ul li a {
+    font-size: 1.4rem;
+  }
+}
 .gnb > li ul li a:hover {
   background-color: #d8d8d8;
+}
+
+.gnb > li:hover > ul {
+  max-height: 600px;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 #footer {

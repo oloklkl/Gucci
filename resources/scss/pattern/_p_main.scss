@@ -427,13 +427,15 @@
         padding: 10px 50px;
         font-size: 2rem;
         font-weight: 600;
-      }
 
-      @include tablet {
-        font-size: 1.6rem;
-      }
-      @include mobile {
-        font-size: 1.4rem;
+        @include tablet {
+          font-size: 1.6rem;
+        }
+        @include mobile {
+          width: 180px;
+          padding: 10px 40px;
+          font-size: 1.4rem;
+        }
       }
 
       .ri-circle-fill {
@@ -454,13 +456,22 @@
       background-color: $primary-50;
       padding: 10px 50px;
       color: $gray-0;
+
+      @include tablet {
+        font-size: 1.6rem;
+      }
+      @include mobile {
+        width: 180px;
+        padding: 10px 40px;
+        font-size: 1.4rem;
+      }
     }
   }
 }
 
 // gucci-recommend 섹션
 .gucci-recommend {
-  background-color: $secondary;
+  background-color: $secondary-50;
   padding: 50px 0;
 
   &__header {
@@ -536,6 +547,15 @@
       font-size: 1.2rem;
       color: $gray-40;
 
+      &:hover {
+        color: $primary;
+        cursor: pointer;
+      }
+
+      &.active {
+        color: $primary;
+      }
+
       i {
         font-size: 2.4rem;
       }
@@ -543,6 +563,88 @@
 
     li:nth-child(2) {
       color: $gray-90;
+    }
+  }
+}
+
+.bottom-category {
+  position: fixed;
+  top: 60px;
+  bottom: 60px;
+  left: 0;
+  width: 100%;
+  background-color: $gray-0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  display: none;
+
+  @include mobileMore {
+    display: none;
+  }
+
+  &.show {
+    display: block;
+  }
+
+  .bottom-category-nav {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    .gnb {
+      display: flex;
+      flex-direction: column;
+      padding: 80px 0;
+
+      > li {
+        flex: 1;
+        position: static;
+        text-align: center;
+
+        > a {
+          display: block;
+          font-weight: bold;
+          font-size: 1.4rem;
+          padding: 1rem;
+          cursor: pointer;
+          transition: color 0.3s;
+          color: $gray-90;
+
+          &:hover {
+            color: $primary-50;
+          }
+        }
+
+        // 서브 메뉴 기본 숨김
+        > ul {
+          position: static;
+          max-height: 0;
+          padding: 1rem 0;
+          overflow: hidden;
+          transition: max-height 0.4s ease, opacity 0.4s ease;
+          opacity: 0;
+
+          li {
+            a {
+              display: block;
+              padding: 0 3rem;
+              font-size: 1.3rem;
+              color: #444;
+              cursor: pointer;
+            }
+            a:hover {
+              color: $secondary;
+              font-weight: bold;
+            }
+          }
+        }
+
+        // 활성화 시 드롭다운 펼침
+        &.active > ul {
+          max-height: 1000px;
+          opacity: 1;
+        }
+      }
     }
   }
 }
