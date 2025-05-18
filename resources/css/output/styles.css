@@ -356,30 +356,50 @@ legend {
 
 .intro .slide-intro .swiper-slide {
   position: relative;
+  height: auto;
 }
 .intro .slide-intro .swiper-slide.swiper-slide-active .text-area {
   opacity: 1;
-  transform: translate(-30%, 60%);
+  transform: translate(-30%, 70%);
 }
-.intro .slide-intro .swiper-slide img {
-  object-position: 50% 50%;
+.intro .slide-intro .swiper-slide .only-pc {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+  .intro .slide-intro .swiper-slide .only-pc {
+    display: none;
+  }
+}
+@media (max-width: 599px) {
+  .intro .slide-intro .swiper-slide .only-pc {
+    display: none;
+  }
+}
+.intro .slide-intro .swiper-slide .only-mobile {
+  display: none;
   height: 100vh;
 }
 @media (min-width: 600px) and (max-width: 1023px) {
-  .intro .slide-intro .swiper-slide img {
-    height: 100vh;
+  .intro .slide-intro .swiper-slide .only-mobile {
+    display: block;
   }
 }
-@media (min-width: 1024px) {
-  .intro .slide-intro .swiper-slide img {
-    height: 100vh;
+@media (max-width: 599px) {
+  .intro .slide-intro .swiper-slide .only-mobile {
+    display: block;
   }
+}
+.intro .slide-intro .swiper-slide img {
+  object-position: 50% 0;
+  height: 100vh;
 }
 .intro .slide-intro .swiper-slide .text-area {
   position: absolute;
   top: 50%;
   left: 40%;
-  transform: translate(50%, 0);
   text-align: center;
   width: 50%;
   max-width: 300px;
@@ -398,6 +418,7 @@ legend {
   color: #fff;
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.8));
 }
 @media (min-width: 600px) and (max-width: 1023px) {
   .intro .slide-intro .swiper-slide .text-area__tit {
@@ -412,6 +433,7 @@ legend {
 .intro .slide-intro .swiper-slide .text-area__cont {
   color: #fff;
   font-size: 2rem;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.8));
 }
 @media (max-width: 599px) {
   .intro .slide-intro .swiper-slide .text-area__cont {
@@ -422,7 +444,7 @@ legend {
   display: inline-block;
   margin-top: 30px;
   padding: 7px 20px;
-  background: #8f0000;
+  background: #0a6b31;
   color: #fff;
 }
 @media (min-width: 600px) and (max-width: 1023px) {
@@ -503,7 +525,7 @@ legend {
   display: block;
   width: 300px;
   height: 400px;
-  object-fit: cover;
+  object-fit: fill;
   transition: opacity 0.3s ease;
 }
 @media (min-width: 600px) and (max-width: 1023px) {
