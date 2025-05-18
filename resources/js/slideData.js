@@ -81,7 +81,7 @@ export const slideData = {
       price: "1,910,000원",
       season: "2025 봄 여름 컬렉션",
       imgDefault: "../resources/images/component/studio/man/6.avif",
-      imgHover: "../resources/images/component/studio/man/6-2.avif",
+      imgHover: "../resources/images/component/studio/man/6-2.webp",
     },
   ],
   accessories: [
