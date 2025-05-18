@@ -318,12 +318,7 @@ legend {
 
 .gucci-recommend {
   width: 100%;
-  height: 100vh;
-}
-@media (max-width: 599px) {
-  .gucci-recommend {
-    height: auto;
-  }
+  height: auto;
 }
 
 .bottom-bar {
@@ -587,7 +582,7 @@ legend {
 
 .campaign {
   color: #ffffff;
-  background-image: url("/resources/images/component/campaign/campaign-bg.png");
+  background-color: #8f0000;
   background-size: cover;
 }
 .campaign .inner {
@@ -822,7 +817,7 @@ legend {
 }
 
 .gucci-recommend {
-  background-color: #282828;
+  background-color: #c49a6c;
   padding: 50px 0;
 }
 .gucci-recommend__header {
@@ -856,22 +851,13 @@ legend {
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: 650px;
-}
-@media (max-width: 599px) {
-  .gucci-recommend .swiper-slide {
-    height: 450px;
-  }
+  height: auto;
 }
 .gucci-recommend .swiper-slide img {
   display: block;
-  width: 100%;
-  height: 650px;
-}
-@media (max-width: 599px) {
-  .gucci-recommend .swiper-slide img {
-    height: 450px;
-  }
+  width: auto;
+  height: auto;
+  object-fit: cover;
 }
 
 .bottom-bar {
@@ -1035,6 +1021,7 @@ legend {
   position: relative;
   width: 100%;
   height: 100%;
+  user-select: none;
 }
 .mix-match .swiper-slide {
   text-align: center;
@@ -1239,7 +1226,7 @@ a {
 #footer {
   width: 100%;
   height: auto;
-  background-color: #0a6b31;
+  background-color: #1d1d1d;
   color: #e4e4e4;
   font-size: 1.2rem;
   padding: 30px 0;
