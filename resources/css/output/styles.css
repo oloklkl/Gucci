@@ -796,6 +796,7 @@ legend {
   padding: 10px 50px;
   font-size: 2rem;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 @media (min-width: 600px) and (max-width: 1023px) {
   .mix-match .gender-tabs button span {
@@ -812,6 +813,12 @@ legend {
 .mix-match .gender-tabs button .ri-circle-fill {
   color: #b20808;
 }
+.mix-match .gender-tabs button.man span {
+  border-color: #1565c0;
+}
+.mix-match .gender-tabs button.man .ri-circle-fill {
+  color: #1565c0;
+}
 .mix-match .add-to-cart {
   width: 100%;
   display: flex;
@@ -824,6 +831,9 @@ legend {
   background-color: #b20808;
   padding: 10px 50px;
   color: #ffffff;
+}
+.mix-match .add-to-cart span.man {
+  background-color: #1565c0;
 }
 @media (min-width: 600px) and (max-width: 1023px) {
   .mix-match .add-to-cart span {
@@ -1039,6 +1049,12 @@ legend {
   height: auto;
 }
 
+.mix-match .gender-slides {
+  display: none;
+}
+.mix-match .gender-slides.active {
+  display: block;
+}
 .mix-match .swiper {
   position: relative;
   width: 100%;

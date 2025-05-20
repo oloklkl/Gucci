@@ -63,6 +63,14 @@
 
 //mix-match 섹션
 .mix-match {
+  .gender-slides {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
   .swiper {
     position: relative;
     width: 100%;
