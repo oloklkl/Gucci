@@ -29,3 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.querySelector(".add-to-cart").addEventListener("click", () => {
+  alert("3개의 조합이 장바구니에 담겼습니다!");
+});
