@@ -574,11 +574,6 @@
 
     h2 {
       font-size: 3rem;
-      background: linear-gradient(135deg, #0a6b31, #8f0000);
-      -webkit-background-clip: text; /* 크롬, 사파리 */
-      -webkit-text-fill-color: transparent; /* 텍스트 색상을 투명으로 */
-      background-clip: text; /* 일부 브라우저 지원 */
-      text-fill-color: transparent; /* 일부 브라우저 지원 */
 
       @include mobile {
         font-size: 2rem;
