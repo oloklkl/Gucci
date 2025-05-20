@@ -22,7 +22,6 @@ Object.entries(slideData).forEach(([category, items], index) => {
         </div>
         <h3 class="studio-item-name">${item.name}</h3>
         <em class="studio-item-price">${item.price}</em>
-        ${item.season ? `<span class="studio-item-season">${item.season}</span>` : ""}
       </a>
     `;
     wrapper.appendChild(slideItem);
