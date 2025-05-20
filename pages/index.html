@@ -30,6 +30,7 @@
     <script defer src="../resources/js/include.js"></script>
     <script defer src="../resources/js/ui-pattern.js"></script>
     <script defer src="../resources/js/ui-swiper.js"></script>
+    <script defer src="../resources/js/mixMatch.js"></script>
   </head>
   <body>
     <div id="skip-nav">
@@ -261,68 +262,122 @@
           <div class="inner">
             <!-- 성별 선택 -->
             <div class="gender-tabs">
-              <button>
+              <button class="gender-btn active" data-gender="woman">
                 <span><i class="ri-circle-fill"></i>WOMAN</span>
               </button>
-              <!-- <button>
-                <span>MAN<i class="ri-circle-fill"></i></span>
-              </button> -->
             </div>
 
-            <!-- 추천 아이템 슬라이드 -->
-            <div class="swiper mixSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    title="오버사이즈 테일러드 셔츠
-                  115,000원"
-                    src="../resources/images/component/mix-match/test.png"
-                    alt=""
-                  />
+            <div class="gender-slides woman-slides active">
+              <!-- 추천 아이템 슬라이드 -->
+              <div class="swiper mixSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/1.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/4.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/5.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/6.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/7.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/8.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/9.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/10.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/11.png" alt="" /></div>
                 </div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test.png" alt="" /></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
               </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+
+              <div class="swiper mixSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/1-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/2-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/3-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/4-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/5-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/6-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/7-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/8-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/9-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/10-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/11-2.png" alt="" /></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+
+              <div class="swiper mixSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/1-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/2-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/3-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/4-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/5-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/6-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/7-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/8-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/9-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/10-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/woman/11-3.png" alt="" /></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
             </div>
 
-            <div class="swiper mixSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-2.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-2.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-2.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-2.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-2.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-2.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-2.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-2.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-2.png" alt="" /></div>
+            <div class="gender-slides man-slides">
+              <div class="swiper mixSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/1.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/4.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/5.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/6.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/7.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/8.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/9.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/10.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/11.png" alt="" /></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
               </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-            </div>
 
-            <div class="swiper mixSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-3.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-3.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-3.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-3.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-3.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-3.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-3.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-3.png" alt="" /></div>
-                <div class="swiper-slide"><img src="../resources/images/component/mix-match/test1-3.png" alt="" /></div>
+              <div class="swiper mixSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/1-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/2-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/3-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/4-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/5-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/6-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/7-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/8-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/9-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/10-2.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/11-2.png" alt="" /></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
               </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+
+              <div class="swiper mixSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/1-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/2-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/3-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/4-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/5-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/6-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/7-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/8-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/9-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/10-3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="../resources/images/component/mix-match/man/11-3.png" alt="" /></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
             </div>
 
             <!-- 장바구니 버튼 -->
