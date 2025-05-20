@@ -286,7 +286,7 @@ legend {
 .studio {
   width: 100%;
   height: auto;
-  background: #fff;
+  background: #f8f8f8;
   overflow: hidden;
   margin: 100px 0;
 }
@@ -874,8 +874,9 @@ legend {
 }
 
 .gucci-recommend {
-  background-color: #c49a6c;
+  background-color: #282828;
   padding: 50px 0;
+  margin-bottom: 100px;
 }
 .gucci-recommend__header {
   display: flex;
