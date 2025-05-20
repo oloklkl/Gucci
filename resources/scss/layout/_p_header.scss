@@ -45,9 +45,11 @@ a {
         a {
           font-size: 1.4rem;
           color: $white;
+          transition: transform 0.3s ease;
 
           &:hover {
             color: $primary;
+            transform: scale(1.2);
           }
         }
       }
