@@ -51,3 +51,25 @@ tabs.forEach((tab) => {
     });
   });
 });
+
+// 모바일/태블릿에서 자동 이미지 전환 (3초 간격)
+const isTabletLess = window.matchMedia("(max-width: 1023px)").matches;
+
+if (isTabletLess) {
+  const slides = document.querySelectorAll(".studio-slide .swiper-slide");
+
+  slides.forEach((slide) => {
+    const defaultImg = slide.querySelector(".img-default");
+    const hoverImg = slide.querySelector(".img-hover");
+
+    if (!defaultImg || !hoverImg) return;
+
+    let isHover = false;
+
+    setInterval(() => {
+      defaultImg.style.opacity = isHover ? "1" : "0";
+      hoverImg.style.opacity = isHover ? "0" : "1";
+      isHover = !isHover;
+    }, 3000);
+  });
+}
