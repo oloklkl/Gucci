@@ -1,8 +1,6 @@
 # 👜 GUCCI Website Renewal
 
-<p align="center">
-  <img src="https://oloklkl.github.io/Gucci/resources/images/pattern/common/logo.svg" alt="GUCCI logo" width="120" />
-</p>
+<img width="1898" alt="meta" src="https://github.com/user-attachments/assets/eabe8ded-8e37-49aa-be36-1ec1d4901559" />
 
 ## ✨ 프로젝트 소개
 
@@ -37,11 +35,10 @@
 - 💅 **SCSS 구조화**: 컴포넌트 기반으로 스타일 분리
 - 📁 **모듈형 구조**: header, footer는 `include-html`을 통해 각 페이지에 삽입
 
-## 📸 데모 미리보기
+## 🔗 프로젝트 링크
 
 > 👉 [바로가기 (GitHub Pages)](https://oloklkl.github.io/Gucci/pages/)
-> 
-<img width="1898" alt="meta" src="https://github.com/user-attachments/assets/eabe8ded-8e37-49aa-be36-1ec1d4901559" />
+
 
 ## 💌 Open Graph
 
@@ -69,7 +66,7 @@ Gucci/
 ├── pages
 │ ├── layout/
 │ ├── ├── header.html
-│ ├── ├──footer.html
+│ ├── ├── footer.html
 │ └── index.html
 ├── resources/
 │ ├── css/
