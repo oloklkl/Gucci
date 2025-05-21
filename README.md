@@ -82,7 +82,7 @@ Gucci/
 - Swiper의 coverflow에서 **모바일 대응 시 spaceBetween 조절**을 위해 `breakpoints` 설정 적용
 
 
-- ## ⏰ 커밋 히스토리
+## ⏰ 커밋 히스토리
 
 [내 커밋 히스토리 보러가기](https://github.com/oloklkl/Gucci/commits/main/)
 
