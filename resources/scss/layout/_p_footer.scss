@@ -156,5 +156,9 @@
       width: 100%;
       filter: invert(100%) sepia(94%) saturate(25%) hue-rotate(12deg) brightness(105%) contrast(108%);
     }
+
+    @include mobile {
+      margin-bottom: 80px;
+    }
   }
 }
