@@ -35,8 +35,7 @@ var swiper = new Swiper(".mixSwiper", {
     prevEl: ".swiper-button-prev",
   },
   breakpoints: {
-    768: { slidesPerView: 3 },
-    480: { slidesPerView: 3 },
+    600: { slidesPerView: 3 },
     0: { slidesPerView: 1 },
   },
 });
@@ -57,5 +56,15 @@ var swiper = new Swiper(".gucci-recommend__swiper", {
   },
   pagination: {
     el: ".swiper-pagination",
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+    0: {
+      slidesPerView: 3,
+      spaceBetween: 0,
+    },
   },
 });
