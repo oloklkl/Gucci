@@ -176,3 +176,15 @@
     }
   }
 }
+
+@include tabletMore {
+  .gucci-recommend .swiper-slide {
+    height: 80vh;
+    max-height: 700px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
