@@ -14,11 +14,16 @@ Object.entries(slideData).forEach(([category, items], index) => {
   items.forEach((item) => {
     const slideItem = document.createElement("div");
     slideItem.className = "swiper-slide";
+
+    // PET 카테고리인지 확인하여 클래스 추가
+    const isPet = category === "pet";
+    const imgClass = isPet ? "pet-img" : "";
+
     slideItem.innerHTML = `
       <a href="${item.link || "#"}">
         <div class="img-wrap">
-          <img class="img-default" src="${item.imgDefault}" alt="${item.name}" />
-          <img class="img-hover" src="${item.imgHover}" alt="${item.name}" />
+          <img class="img-default ${imgClass}" src="${item.imgDefault}" alt="${item.name}" />
+          <img class="img-hover ${imgClass}" src="${item.imgHover}" alt="${item.name}" />
         </div>
         <h3 class="studio-item-name">${item.name}</h3>
         <em class="studio-item-price">${item.price}</em>
@@ -53,10 +58,8 @@ tabs.forEach((tab) => {
 
 // 모바일/태블릿에서 자동 이미지 전환 (3초 간격)
 const isTabletLess = window.matchMedia("(max-width: 1023px)").matches;
-
 if (isTabletLess) {
   const slides = document.querySelectorAll(".studio-slide .swiper-slide");
-
   slides.forEach((slide) => {
     const defaultImg = slide.querySelector(".img-default");
     const hoverImg = slide.querySelector(".img-hover");
@@ -64,7 +67,6 @@ if (isTabletLess) {
     if (!defaultImg || !hoverImg) return;
 
     let isHover = false;
-
     setInterval(() => {
       defaultImg.style.opacity = isHover ? "1" : "0";
       hoverImg.style.opacity = isHover ? "0" : "1";
