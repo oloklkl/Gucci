@@ -215,6 +215,10 @@
               width: 150px;
               height: 250px;
             }
+
+            &.pet-img {
+              object-fit: fill;
+            }
           }
 
           .img-hover {

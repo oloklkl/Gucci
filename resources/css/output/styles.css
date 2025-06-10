@@ -546,6 +546,10 @@ legend {
     height: 250px;
   }
 }
+.studio .studio-content .swiper-slide a .img-wrap .img-default.pet-img,
+.studio .studio-content .swiper-slide a .img-wrap .img-hover.pet-img {
+  object-fit: fill;
+}
 .studio .studio-content .swiper-slide a .img-wrap .img-hover {
   position: absolute;
   top: 0;
