@@ -360,7 +360,7 @@ legend {
 }
 .intro .slide-intro .swiper-slide.swiper-slide-active .text-area {
   opacity: 1;
-  transform: translate(-30%, 70%);
+  transform: translate(-30%, 40%);
 }
 .intro .slide-intro .swiper-slide .only-pc {
   width: 100%;
